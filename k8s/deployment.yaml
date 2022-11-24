@@ -1,0 +1,21 @@
+# deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: getpod
+spec:
+  selector:
+    matchLabels:
+      app: getpod
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: getpod
+    spec:
+      containers:
+        - name: getpod
+          image: nibizien/docker_pod_info:0.0.1
+          ports:
+            - containerPort: 9080
+
