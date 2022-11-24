@@ -24,6 +24,7 @@ mvn clean clean install dockerfile:build
 mvn clean install dockerfile:tag
 mvn clean install dockerfile:push
 mvn clean install dockerfile:tag@tag-latest
+mvn clean install dockerfile:push@tag-latest
 ```
 
 Check image generated
@@ -49,7 +50,7 @@ http://localhost:9080/getpod
 
 https://docs.k3s.io/installation
 
-## Docker commandes
+# Docker commandes
 
 ```bash
 docker inspect $(docker ps | grep -i docker_pod_info | cut -d " " -f1) | grep -i IPAddress
@@ -63,6 +64,7 @@ kubectl apply -f ./k8s/
 ```
 
 And get ip of service
+
 ```bash
 kubectl get svc | grep -i svc-getpod
 >> svc-getpod   ClusterIP   10.43.93.137   <none>        9080/TCP   60s
@@ -77,18 +79,22 @@ kubectl delete po --all
 ```
 
 
-## Kubernetes commandes
+# Kubernetes commandes
 
+```bash
 kubectl delete all --all
 kubectl get all
 kubectl get pods -o wide
 kubectl get deployment deploy_name -o yaml > result_deploy.yaml
-
+```
 
 # install helm
+
+```bash
 curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
 chmod 700 get_helm.sh
 ./get_helm.sh
+```
 
 # Deploy helm chart
 
@@ -109,13 +115,14 @@ helm rollback demo 1
 helm delete demo
 ```
 
-# install argocd
+# Install argocd
 
+Upgrade repo
 ```bash
 helm repo add argo-cd https://argoproj.github.io/argo-helm
 helm dep update argocd/argocd/
 ```
-
+Install
 ```bash
 helm install argo-cd argocd/argocd
 kubectl apply -f argocd/argocd/manifests/argocd-nodeport.yaml
@@ -144,12 +151,13 @@ argocd version
   Platform: linux/amd64
 ```
 
+Before login
 ```bash
 argocd login localhost:30007
 >>'admin:login' logged in successfully
 Context 'localhost:30007' updated
 ```
-
+After login
 ```bash
 argocd version
 >>argocd: v2.5.2+148d8da
@@ -182,4 +190,6 @@ argocd app create demo --repo https://github.com/nibizien/servive_in_k3s.git --p
 argocd app set demo --sync-policy automated
 ```
 
-Commit a change of replica set in git and see in argo
+Commit a change of replica set and reference of image in git and see in argo
+
+
