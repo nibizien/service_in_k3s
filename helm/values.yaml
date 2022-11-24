@@ -1,4 +1,4 @@
-replicaCount: 2
+replicaCount: 3
 image:
   registry: docker.io
   repository: nibizien/docker_pod_info

@@ -177,4 +177,9 @@ argocd-server: v2.3.2+ecc2af9
 
 With cli 
 
-argocd app create demo --repo https://github.com/nibizien/servive_in_k3s.git --path argocd/apps --dest-namespace default --dest-server https://kubernetes.default.svc
+```bash
+argocd app create demo --repo https://github.com/nibizien/servive_in_k3s.git --path helm --dest-namespace default --dest-server https://kubernetes.default.svc
+argocd app set demo2 --sync-policy automated
+```
+
+Commit a change of replica set in git and see in argo
