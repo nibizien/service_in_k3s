@@ -88,7 +88,7 @@ kubectl get pods -o wide
 kubectl get deployment deploy_name -o yaml > result_deploy.yaml
 ```
 
-# install helm
+# Install helm
 
 ```bash
 curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
