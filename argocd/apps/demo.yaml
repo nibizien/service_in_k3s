@@ -10,7 +10,7 @@ spec:
     namespace: default
   project: default
   source:
-    path: argocd/apps
+    path: helm
     repoURL: https://github.com/nibizien/servive_in_k3s/
     targetRevision: HEAD
   syncPolicy:

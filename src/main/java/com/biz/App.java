@@ -39,8 +39,12 @@ class AppRestController {
 		
 		      try{
 			InetAddress my_address = InetAddress.getLocalHost();
-			String response = "--- Hello I am POD : " + my_address.getHostName() + " with IP : " + my_address.getHostAddress() + " at : "+ new Date();
-			System.out.println(response);
+			String response = "";
+			String myPod = "--- Hello I am POD : " + my_address.getHostName();
+			String myIp = "--- My POD IP is : " + my_address.getHostAddress();
+			String myDate = "--- My POD replyed at : " + new Date();
+			//String response = "--- Hello I am POD : " + my_address.getHostName() + " with IP : " + my_address.getHostAddress() + " at : "+ new Date();
+			System.out.println(myPod + "\n" + myIp + "\n" + myDate);
 			return response;
 		      }
 		      catch (UnknownHostException e){
