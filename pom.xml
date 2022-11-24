@@ -5,7 +5,7 @@
 
 	<groupId>fr.biz.pod_info</groupId>
 	<artifactId>docker_pod_info</artifactId>
-	<version>0.0.2</version>
+	<version>0.0.3</version>
 	<packaging>jar</packaging>
 
 	<name>docker_pod_info</name>

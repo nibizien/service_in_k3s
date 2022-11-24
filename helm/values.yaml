@@ -2,7 +2,7 @@ replicaCount: 1
 image:
   registry: docker.io
   repository: nibizien/docker_pod_info
-  tag: latest
+  tag: 0.0.3
   pullPolicy: IfNotPresent
 imagePullSecrets: []
 nameOverride: ""

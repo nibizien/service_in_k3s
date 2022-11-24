@@ -192,4 +192,8 @@ argocd app set demo --sync-policy automated
 
 Commit a change of replica set and reference of image in git and see in argo
 
+From a yaml fil
 
+```bash
+kubectl apply -f argocd/apps/demo.yaml
+```
