@@ -1,4 +1,4 @@
-# My initial config
+# My initial configuration
 
 ```bash
 uname -a
